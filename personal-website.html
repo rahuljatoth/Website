@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rahul.codes - Software Engineer</title>
+  <style>
+    :root {
+      --bg-color: #0e1212;
+      --text-color: #e6e6e6;
+      --accent-color: #64ffda;
+      --secondary-color: #8892b0;
+      --hover-color: #233554;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    header {
+      margin-bottom: 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--accent-color);
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+    
+    nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      transition: color 0.3s;
+      font-size: 0.9rem;
+    }
+    
+    nav a:hover {
+      color: var(--accent-color);
+    }
+    
+    .hero {
+      margin-bottom: 6rem;
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .hero h1 {
+      font-size: 5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+    
+    .hero h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--secondary-color);
+      margin-bottom: 2rem;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+      color: var(--secondary-color);
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: transparent;
+      color: var(--accent-color);
+      border: 1px solid var(--accent-color);
+      padding: 0.75rem 1rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .btn:hover {
+      background-color: rgba(100, 255, 218, 0.1);
+    }
+    
+    .section {
+      margin-bottom: 6rem;
+    }
+    
+    .section-title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2.5rem;
+      font-size: 1.5rem;
+      color: var(--text-color);
+    }
+    
+    .section-title::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 300px;
+      background-color: var(--secondary-color);
+      margin-left: 1rem;
+      opacity: 0.5;
+    }
+    
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .project-card {
+      background-color: #172a45;
+      border-radius: 4px;
+      padding: 2rem;
+      transition: transform 0.3s;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .project-card h3 {
+      color: var(--text-color);
+      margin-bottom: 1rem;
+    }
+    
+    .project-card p {
+      color: var(--secondary-color);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .tag {
+      background-color: rgba(100, 255, 218, 0.1);
+      color: var(--accent-color);
+      padding: 0.25rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.8rem;
+    }
+    
+    .project-links {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .project-links a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+    
+    .project-links a:hover {
+      color: var(--accent-color);
+    }
+    
+    .experience-item {
+      margin-bottom: 3rem;
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 2rem;
+    }
+    
+    .experience-date {
+      font-size: 0.9rem;
+      color: var(--accent-color);
+    }
+    
+    .experience-content h3 {
+      margin-bottom: 0.5rem;
+    }
+    
+    .experience-content h4 {
+      margin-bottom: 1rem;
+      color: var(--secondary-color);
+    }
+    
+    .experience-content ul {
+      padding-left: 1.5rem;
+      color: var(--secondary-color);
+    }
+    
+    .experience-content li {
+      margin-bottom: 0.5rem;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 3rem 0;
+      color: var(--secondary-color);
+      font-size: 0.9rem;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .social-links a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 1.5rem;
+      transition: color 0.3s, transform 0.3s;
+    }
+    
+    .social-links a:hover {
+      color: var(--accent-color);
+      transform: translateY(-3px);
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+      
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+      
+      .experience-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+      
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      nav ul {
+        margin-top: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">rahul.codes</div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <section class="hero">
+      <h1>Hi, I'm Rahul.</h1>
+      <h2>I build things for the cloud.</h2>
+      <p>I'm a software engineer specializing in building and deploying scalable cloud systems. Currently, I'm focused on creating reliable infrastructure and services at AWS EC2 and Snow.</p>
+      <div>
+        <a href="#projects" class="btn">View My Work</a>
+        <a href="#contact" class="btn">Get In Touch</a>
+      </div>
+    </section>
+    
+    <section id="about" class="section">
+      <h2 class="section-title">About Me</h2>
+      <p>With 8 years of experience in designing, developing, and maintaining large-scale software systems, I specialize in full-stack development and AWS cloud services. I'm passionate about creating efficient, scalable, and reliable applications that solve real-world problems.</p>
+      <p>My expertise spans across various technologies including Java, Python, Docker, Kubernetes, and a wide range of AWS services like EC2, S3, Lambda, and DynamoDB. I enjoy working in agile environments and collaborating with cross-functional teams to deliver innovative solutions.</p>
+      <div style="margin-top: 2rem;">
+        <h3 style="margin-bottom: 1rem;">Technologies I work with:</h3>
+        <div class="tags">
+          <span class="tag">Java</span>
+          <span class="tag">Python</span>
+          <span class="tag">AWS</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Kubernetes</span>
+          <span class="tag">Spring Boot</span>
+          <span class="tag">Microservices</span>
+          <span class="tag">CI/CD</span>
+          <span class="tag">Terraform</span>
+          <span class="tag">REST APIs</span>
+        </div>
+      </div>
+    </section>
+    
+    <section id="experience" class="section">
+      <h2 class="section-title">Where I've Worked</h2>
+      
+      <div class="experience-item">
+        <div class="experience-date">
+          Aug 2022 - Present
+        </div>
+        <div class="experience-content">
+          <h3>Software Development Engineer</h3>
+          <h4>Amazon Web Services (AWS)</h4>
+          <ul>
+            <li>Own AWS Snowball billing infrastructure and automation projects</li>
+            <li>Design and implement RESTful APIs using Spring Boot with PostgreSQL</li>
+            <li>Set up AWS Snowball Infrastructure in new regions (Dubai & Tel Aviv)</li>
+            <li>Develop CI/CD pipelines using Elastic Kubernetes on AWS</li>
+            <li>Implement highly scalable applications leveraging various AWS services</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="experience-item">
+        <div class="experience-date">
+          Jun 2022 - Aug 2022
+        </div>
+        <div class="experience-content">
+          <h3>Software Engineer</h3>
+          <h4>SAS Info Inc.</h4>
+          <ul>
+            <li>Implemented virtualization solutions using VMWare and Vagrant</li>
+            <li>Enhanced features of existing microservices using Spring Boot</li>
+            <li>Built and maintained robust CI/CD pipelines</li>
+            <li>Developed infrastructure as code using Terraform and CloudFormation</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="experience-item">
+        <div class="experience-date">
+          Jul 2018 - Dec 2020
+        </div>
+        <div class="experience-content">
+          <h3>Software Engineer</h3>
+          <h4>VIVOTEX IND PVT LTD</h4>
+          <ul>
+            <li>Developed SOAP-based web services using Java and Apache CXF</li>
+            <li>Built user-friendly web applications using Java, HTML, CSS, and JavaScript</li>
+            <li>Implemented security protocols to protect sensitive data</li>
+            <li>Developed and integrated RESTful APIs</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    <section id="projects" class="section">
+      <h2 class="section-title">Things I've Built</h2>
+      <div class="grid">
+        <div class="project-card">
+          <h3>AWS Snowball Billing Infrastructure</h3>
+          <p>Redesigned and implemented the billing infrastructure for AWS Snowball service, improving scalability and reliability.</p>
+          <div class="tags">
+            <span class="tag">Java</span>
+            <span class="tag">AWS</span>
+            <span class="tag">Microservices</span>
+            <span class="tag">Spring Boot</span>
+          </div>
+          <div class="project-links">
+            <a href="#" aria-label="GitLab">🔒</a>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <h3>Region Launch Automation</h3>
+          <p>Developed automation tools to streamline AWS Snowball service deployment in new regions, reducing launch time by 40%.</p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Boto3</span>
+            <span class="tag">Terraform</span>
+            <span class="tag">AWS</span>
+          </div>
+          <div class="project-links">
+            <a href="#" aria-label="GitHub">🔒</a>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <h3>CI/CD Pipeline with Kubernetes</h3>
+          <p>Designed and implemented a complete CI/CD pipeline using Kubernetes to automate code builds, testing, and deployments.</p>
+          <div class="tags">
+            <span class="tag">Docker</span>
+            <span class="tag">Kubernetes</span>
+            <span class="tag">Jenkins</span>
+            <span class="tag">AWS</span>
+          </div>
+          <div class="project-links">
+            <a href="#" aria-label="Live Demo">🔒</a>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <h3>Serverless Event Processing System</h3>
+          <p>Built an event-driven processing system using AWS Lambda and Step Functions to handle high-volume data processing tasks.</p>
+          <div class="tags">
+            <span class="tag">Lambda</span>
+            <span class="tag">Step Functions</span>
+            <span class="tag">DynamoDB</span>
+            <span class="tag">API Gateway</span>
+          </div>
+          <div class="project-links">
+            <a href="#" aria-label="GitHub">🔒</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="contact" class="section">
+      <h2 class="section-title">Get In Touch</h2>
+      <p style="max-width: 600px; margin: 0 auto; text-align: center; margin-bottom: 2rem;">
+        I'm currently open to new opportunities. Whether you have a question or just want to say hi, I'll do my best to get back to you!
+      </p>
+      <div style="text-align: center;">
+        <a href="mailto:rahul.yvf34@gmail.com" class="btn">Say Hello</a>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="social-links">
+      <a href="#" aria-label="GitHub">GitHub</a>
+      <a href="#" aria-label="LinkedIn">LinkedIn</a>
+      <a href="#" aria-label="Twitter">Twitter</a>
+    </div>
+    <p>Designed & Built by Rahul Vinayak J</p>
+    <p>© 2024</p>
+  </footer>
+</body>
+</html>
